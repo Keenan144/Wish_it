@@ -1,0 +1,12 @@
+<% @friend_list = @friends ||= []%>
+  <% User.last(100).each do |user| %>
+    <% if @friend_list.include?(user.name) || session_current_user.name == user.name%>   
+      <% else %>
+          <a href="/user/<%=session_current_user.id%>/profile/<%=user.id%>"><%=user.name%><br><br>
+  <% end %>
+<% end %>
+
+
+
+
+<!-- Something.find(:all, :order => "id desc", :limit => 5).reverse -->

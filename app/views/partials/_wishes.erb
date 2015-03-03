@@ -1,0 +1,13 @@
+
+<tr>
+  <td>
+  <a href="/user/<%=@wish.user.id%>/wish/<%=@wish.id%>">
+    <%= @wish.content %></a>
+  </td>
+  <td>
+  <form action="/wishlistitem/<%=@wish.id%>" id="ajax_add"method="post">
+    <button class="delete_button" data-user-id="<%= @wish.user.id %>" data-wish-id="<%= @wish.id %>">x</button>
+   </form>
+ </td>
+</tr>
+    

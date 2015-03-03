@@ -1,0 +1,10 @@
+<% if session[:oauth][:access_token] != nil %>
+  <%= erb :"partials/_find_facebook_user_api_call" %>
+  <% if @facebook_user == nil %>
+    <%= erb :"partials/_create_new_facebook_user_api" %>
+    <% session_set_current_user(@new_facebook_user)%>
+  <% else %>
+    <%session_set_current_user(@facebook_user)%> 
+    <%= erb :"partials/_hide_homepage_main_show_others"%>
+  <%end%>
+<%end%>

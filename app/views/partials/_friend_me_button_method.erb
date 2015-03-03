@@ -1,0 +1,11 @@
+<%Friend.all.each do |friend|%>
+  <% if session_current_user.id == friend.friender_id && @profile_id.to_i == friend.friended_id%>
+   <style type="text/css">
+    .add_friend{
+      visibility: hidden;
+    }
+   </style>
+   <%elsif @profile_id.to_i == friend.friended_id %>
+   <%end%>
+  <%end%>
+     <button class="add_friend" data-user-id="<%=session_current_user.id%>" data-friend-id="<%=@profile_id%>">Add Friend</button>

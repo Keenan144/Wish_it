@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/application.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/application.js"></script>
+
+    <title> Wish It </title>
+
+  <h1 class="top_title_right">
+    <a href="/" id="wish_list_logo"> Wish It
+    </a>
+  </h1>
+
+  <div class="top_nav_left">
+    <% if session_current_user %>
+    <a href="/profile" id="profile_page_button"><h2 class="profile_page"> Profile Page</h2></a>
+    <% end %>
+  </div>
+
+<%= erb :"partials/_layout3" %>
+
+</head>
+
+
+<body>
+
+
+<!-- Like Button -->
+<div id="facebook_buttons">
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '947543755270283',
+        xfbml      : true,
+        version    : 'v2.2'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+  <div
+    class="fb-like"
+    data-share="true"
+    data-width="200"
+    data-show-faces="true">
+  </div>
+</div>
+
+<div class="logged_in_indicator">
+  <% if session_current_user %>
+  <p id="indicator"> logged in </p>
+    <a class="logout_button" href="/logout">Logout</a><br><br>
+      <% else %>
+      <p id="indicator_off"> logged out </p>
+      <% end %>
+    </div>
+</div>
+
+  <%= yield %>
+
+  <% if session_current_user %>
+    <div class="bottom_nav_center">
+      <div class="things">
+        <a href="/help"> Help Page </a>
+        <a href="/donate"> Donate Page </a>
+        <a href="/contact_info"> Contact Info</a>
+      </div>
+    </div>
+  <% else %>
+
+  <%end%>
+</body>
+
+
+
+
+
+
+
+
+
+

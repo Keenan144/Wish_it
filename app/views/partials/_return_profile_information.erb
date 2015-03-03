@@ -1,0 +1,9 @@
+<% User.all.each do |user| %>
+  <% if user.id == @profile_id.to_i %>
+  <p><%=  user.name %> wishes for: </p>
+  <p><% user.wishes.reverse.each do |wish| %></p>
+    <p><a href="/user/<%= user.id %>/wish/<%=wish.id%>"><%= wish.content %></a></p>
+      <%end%>
+    <% else %>
+  <%end%>
+<% end %>

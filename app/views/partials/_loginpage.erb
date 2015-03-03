@@ -1,0 +1,20 @@
+<div class="homepage_main" align="center">
+  <div id="text_for_homepage">
+    <h1>Welcome to Wish It</h1>
+    <h4> Helping to make your 
+    <br><br> wishes come true...</h4>
+  </div>
+
+  <form class="main_login_form" action='/login' method="post">
+      Email: <input type="text" name="email" placeholder="wish@herokuwebapps.com" size="28px"><br><br>
+      Password: <input type="password" name="password" placeholder="password"><br><br>
+      <input type="submit" value="Log in">
+  </form>
+  
+  <br><a href="/register" id="signup"> 
+  <button>Sign Up</button></a>
+
+  <p><a href="/request" id="login_with_fb"><button id="login_with_fb_button"> Login with facebook </button></a></p>    
+  <%= erb :"partials/_create_a_facebook_user_or_login_with_an_existing" %>
+
+</div>

@@ -1,0 +1,11 @@
+<% @counter = 0 %>
+    
+
+  <% Wish.all.reverse.each do |wish| %>
+  <% @counter += 1 %>
+  <% if @counter < 11 %>
+  <% @dude = (wish.user_id).to_i %>
+    <a href="/user/<%=session_current_user.id%>/profile/<%=@dude%>"><%= wish.content %></a>
+   <br><br>
+ <% end %>
+<% end %>

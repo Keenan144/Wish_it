@@ -1,0 +1,21 @@
+<div class="new_wish_single">
+    
+  <form action="/user/<%= session_current_user.id %>/wish" method="post">
+    Enter a Wish:
+    <br>
+    <input type="text" name="content" placeholder="Two front teeth">
+    <br>
+    <br>
+    Enter a Url:
+    <br>
+    <input type="text" name="url" placeholder="optional">
+    <br>
+    <br>
+    Comments?
+    <br>
+    <input type="text" name="priority" placeholder="I WANT IT SOO MUCH">
+    <br>
+    <br>
+    <input type="submit" value="submit">
+  </form>
+</div>

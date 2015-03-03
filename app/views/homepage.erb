@@ -1,0 +1,44 @@
+<body> 
+<!-- =======================Oauth-login========================= -->
+<% if session_current_user == nil %>
+  <%= erb :"partials/_loginpage" %>
+<% else %>
+
+    <div class="friends_list_main" align="center">
+      <h2> Friends </h2>
+      <%= erb :"partials/_display_friends_list"%>
+    </div>
+
+    <form class="main_friends_search" action='/search' method="get" align="center">
+      Email: <input type="text" name="email" placeholder="search by email" size="28px"><br><br>
+      -or-<br><br>
+      Username: <input type="text" name="username" placeholder="username"><br><br>
+      <input type="submit" value="submit">
+    </form>
+
+<%end%>
+
+
+<div class="new_users_main" align="center">
+  <% if session_current_user == nil %>
+     <style type="text/css">
+      .new_users_main{
+        visibility: hidden;
+      }
+     </style>
+  <%elsif session_current_user != nil%>
+    <h2> New Users </h2>
+      <%= erb :"partials/_display_new_users" %>
+  
+
+  </div>
+  <div class="recent_wishes" align="center">
+    <h2> Recent Wishes </h2>
+    <%= erb :"partials/_print_recent_wishes" %>
+  </div>
+  <% end %>
+    
+
+</div>
+</body>
+   

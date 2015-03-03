@@ -1,0 +1,14 @@
+<% @new_facebook_user = User.create(name: @json["name"], handle: @json["name"], gender: @json["gender"], profile_picture: @json["id"], email: @json["email"])%>
+
+<style type="text/css">
+  .new_users_main{
+    visibility: hidden;
+  }
+  .homepage_main{
+    visibility: hidden;
+  }
+  .recent_wishes{
+    visibility: visible;
+  }
+</style>
+

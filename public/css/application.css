@@ -1,0 +1,342 @@
+body{
+  background-color: silver;
+}
+
+/*-----------Layout----------------------------------------*/
+img.homepage_image{
+  display: block;
+  left: -1%;
+  top: -1%;
+  width: 50em;
+  position: fixed;
+  z-index: -1;
+  padding: -5px;
+}
+img.profile_image{
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  /*display: block;*/
+  width: 100%;
+
+  margin-right: auto;
+  margin-left: auto;
+  position: fixed;
+  z-index: -1;
+  padding: 5px;
+}
+.facebook_buttons, .fb-like{
+  position: absolute;
+  top: 45em;
+  left: 1%;
+}
+.main_friends_search{
+  position: absolute;
+  right: 2%;
+  top: 480px;
+  font-size: 20px;
+}
+.top_title_right{
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 45px;
+  text-shadow: 1px 2px tan;
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  padding-right: 6px;
+  background: linear-gradient(270deg, #5217be, #be7c17, #1767be, #be17bb);
+  opacity: 0.8;
+
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+.top_title_right:hover{
+  background: linear-gradient(270deg, #1217be, #fe7c17, #9767be, #de17bb);
+  text-decoration: none;
+
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+.friends_list_main{
+  top: 15%;
+  left: 2%;
+  position: absolute;
+  padding: 20px;
+  width: 180px;
+  background: rgb(100, 100, 100); /* Fallback */
+  background: rgba(400, 400, 400, 0.2);
+}
+
+.top_nav_left{
+  position: absolute;
+  right: 8px;
+  top: -20px;
+}
+.new_users_main{
+  top: 15%;
+  right: 2%;
+  position: absolute;
+  padding: 20px;
+  width: 150px;
+  height: 300px;
+  overflow: scroll;
+  background: rgb(100, 100, 100); /* Fallback */
+  background: rgba(400, 400, 400, 0.2);
+}
+
+
+.logged_in_indicator{
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+#indicator{
+  visibility: hidden;
+  position: absolute;
+  color: green;
+  top: 14px;
+}
+#indicator_off{
+  position: absolute;
+  visibility: hidden;
+  color: red;
+  top: 8px;
+  right: 4px;
+
+}
+#profile_page_button{
+  position: relative;
+}
+
+
+.bottom_nav_center{
+  /*vertical-align: bottom;*/
+  bottom: 5%;
+  width: 240px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.things{
+  position: absolute;
+  bottom: 2%;
+}
+
+/*--------------------------------------------------*/
+
+
+.homepage_main{
+  top: 150px;
+  left: 35%;
+  /*right: 50%;*/
+  position: absolute;
+  background-color: lightblue;
+  padding: 20px;
+  width: 30%;
+  background: rgb(10, 10, 10); /* Fallback */
+  background: rgba(100, 100, 100, 0.2);
+  /*background-image: url("homepage_background.jpg");*/
+}
+
+#login_with_fb_button{
+  color: white;
+  background-color: rgb(55, 76, 167);
+}
+.recent_wishes{
+  position: relative;
+  top: 100px;
+  width: 40%;
+  left: 32%;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.7);
+}
+
+/*--------------------------------------------------*/
+.here_are_your_wishes{
+  width: 400px ;
+  margin-left: auto ;
+  margin-right: auto ;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+.profile_wishes{
+  /*position: relative;*/
+  top: 40px;
+  padding: 20px;
+  width: 85%;
+}
+.profile_header{
+  position: relative;
+  top: 35px;
+  font-weight: bold;
+}
+.profile_picture{
+  position: absolute;
+  top: 120px;
+  border: 2px solid black;
+  height: 120px;
+  width: 120px;
+}
+#profile_name{
+  position: absolute;
+  top: 250px;
+  left: 1%;
+}
+.register_container{
+  position: relative;
+  top: 120px;
+  padding: 20px;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.6);
+  width: 35%;
+  left: 32%;
+}
+
+/*--------------------------------------------------*/
+
+.new_wish{
+  position: absolute;
+  top: 122px;
+  right: 2%;
+  padding: 20px;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.4);
+}
+.new_wish_single{
+  width: 400px ;
+  margin-top: 120px;
+  margin-left: auto ;
+  margin-right: auto ;
+  padding: 20px;
+}
+
+
+/*--------------------------------------------------*/
+
+.profile_info{
+  position: absolute;
+  top: 200px;
+  padding: 20px;
+  font-size: 20px;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.4);
+  width: 30%;
+  left: 34%;
+}
+.delete_button{
+  color: black;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.8);
+  padding: 1px;
+  padding-left: 1.8px;
+  padding-right: 1.8px;
+}
+#user_id{
+  visibility: visible;
+}
+.friend_me{
+  position: relative;
+  top: 140px;
+  left: 3px;
+}
+.add_friend{
+  background: #3442d9;
+  background-image: -webkit-linear-gradient(top, #3442d9, #03dbf7);
+  background-image: -moz-linear-gradient(top, #3442d9, #03dbf7);
+  background-image: -ms-linear-gradient(top, #3442d9, #03dbf7);
+  background-image: -o-linear-gradient(top, #3442d9, #03dbf7);
+  background-image: linear-gradient(to bottom, #3442d9, #03dbf7);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px;
+  text-decoration: none;
+}
+.add_friend:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.friends_list{
+  position: fixed;
+  top: 140px;
+  left: 200px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.single_wish_information{
+  font-size: 20px;
+  font-family: sans-serif;
+  top: 200px;
+  width: 400px ;
+  margin-top: 120px;
+  margin-left: auto ;
+  margin-right: auto ;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}]
+}
+
+/* unvisited link */
+a:link {
+    color: navy;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: #677BA0;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: navy;
+    text-decoration: none;
+}

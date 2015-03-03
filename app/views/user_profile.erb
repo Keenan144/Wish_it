@@ -1,0 +1,31 @@
+
+<body>
+  <div class="profile_header">
+    <%= erb :"partials/_determine_user" %>
+  </div>
+
+  <div class="profile_picture">
+    <style type="text/css">
+    .profile_picture{
+      background-color: <%= User.find_by(id: @profile_id).profile_picture %>;
+    }
+  </style>
+  
+  <p><% @user.profile_picture %></p>
+</div>
+
+  <div id="profile_name"> 
+    <%= @user_name %><br>
+    <%= @user.gender %><br>
+    <%= @user.age %>
+  </div>
+
+  <div class="friend_me">
+   <%= erb :"partials/_friend_me_button_method" %>
+  </div>
+  <h1><%=@user_id%></h1>
+
+  <div class="profile_info">
+    <%= erb :"partials/_return_profile_information" %>
+  </div>
+</body>

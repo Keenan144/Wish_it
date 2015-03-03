@@ -1,0 +1,85 @@
+
+
+
+<div class="profile_header">
+  <h2 align ="center">Welcome <%= session_current_user.handle.titleize%></h2>
+</div>
+
+
+<div class="profile_picture">
+  <style type="text/css">
+      .profile_picture{
+        background-color: <%= session_current_user.profile_picture %>;
+      }
+   </style>   
+</div>
+
+
+<div id="profile_name"> 
+  <%= session_current_user.name.titleize %>
+  <br>
+  <%= session_current_user.email %>
+  <br>
+  <%= session_current_user.age %>
+  
+  <!-- <form action="/user/<%=session_current_user.id%>/edit" id="ajax_edit" method="put">
+      <button class="delete_button" data-user-id="<%= session_current_user.id %>">Edit Profile</button>
+
+      <input type="text">
+     </form> -->
+</div>
+
+<!-- for ajax calls -->
+<!-- not visible -->
+<div id="user_id">
+<%= id=session_current_user.id %>
+</div>
+
+
+<div class="here_are_your_wishes" align="center">
+  <h4> Here are your wishes: </h4>
+
+<div align="center">
+  <table class="profile_wishes" align="center">
+    <% @counter = 0 %>
+    <% @wishes = Wish.where(user_id: session_current_user.id) %>
+      <tr>
+        <% @wishes.reverse.each do |wish| %>
+          <% @counter += 1%>
+          <% if @counter < 16 %>
+        <td>
+          <a href="/user/<%=wish.user.id%>/wish/<%=wish.id%>"> <%= wish.content %></a></td>
+        <td>
+         <button class="delete_button" data-user-id="<%=wish.user.id%>" data-wish-id="<%=wish.id%>">x</button><br><br></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="new_wish">
+
+  <form class="new_wish_form" action="/user/<%= session_current_user.id %>/wish" method="post">
+    Enter a Wish:
+    <br>
+    <input type="text" name="content" placeholder="Two front teeth">
+    <br>
+    <br>
+    Enter a Url:
+    <br>
+    <input type="text" name="url" placeholder="optional">
+    <br>
+    <br>
+    comments?
+    <br>
+    <input type="text" name="priority" placeholder="I WANT IT SOO MUCH">
+    <br>
+    <br>
+    <input type="submit" value="submit">
+
+
+  </form>
+
+</div>
+

@@ -1,0 +1,7 @@
+<% @friends = [] %>
+    <% if Friend.all != nil %>
+      <%Friend.where(friender_id: session_current_user.id).each do |friend|%>
+       <h3><a href="/user/<%=session_current_user.id%>/profile/<%=friend.friended_id%>"><%= User.find(friend.friended_id).name %></a></h3>
+      <% @friends << User.find(friend.friended_id).name %>         
+    <%end%>
+<%end%>
