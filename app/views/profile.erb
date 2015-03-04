@@ -46,9 +46,10 @@
             <% @counter += 1%>
             <% if @counter < 160 %>
           <td>
-            <a href="/user/<%=wish.user.id%>/wish/<%=wish.id%>"> <%= wish.content %></a></td>
+            <a href="/user/<%=wish.user.id%>/wish/<%=wish.id%>"> <%= wish.content %></a><hr></td>
           <td>
            <button class="delete_button" data-user-id="<%=wish.user.id%>" data-wish-id="<%=wish.id%>">x</button><br><br></td>
+
           <% end %>
         </tr>
         <% end %>
