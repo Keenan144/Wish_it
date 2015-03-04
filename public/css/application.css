@@ -1,7 +1,11 @@
 body{
   background-color: silver;
 }
-
+/*
+* {
+  border: 2px solid black;
+}
+*/
 /*-----------Layout----------------------------------------*/
 img.homepage_image{
   display: block;
@@ -156,37 +160,76 @@ img.profile_image{
 }
 
 /*--------------------------------------------------*/
+#center_of_page_p{
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  min-width: 150px;
+  height: 590px;
+  max-height: 400px;
+  overflow: scroll;
+
+}
 .here_are_your_wishes{
-  width: 400px ;
+  position: relative;
+  width: 90% ;
+  min-width: 200px;
+  max-height: 400px;
   margin-left: auto ;
   margin-right: auto ;
-  padding-bottom: 20px;
-  padding-top: 5px;
+  /*padding-bottom: 20px;*/
+  /*padding-top: 5px;*/
+  padding: 5px;
+  overflow: scroll;
 }
 
 .profile_wishes{
   /*position: relative;*/
   top: 40px;
   padding: 20px;
-  width: 85%;
+  width: 50%;
+  overflow: scroll;
 }
 .profile_header{
   position: relative;
-  top: 35px;
+  top: 30%;
+  width: 50%;
+  min-width: 200px;
+  margin-right: auto;
+  margin-left: auto;
   font-weight: bold;
 }
-.profile_picture{
+#left_side_p{
   position: absolute;
-  top: 120px;
+  width: 23%;
+  height: 600px;
+  float: left;
+}
+.profile_picture{
+  position: relative;
+  top: 1%;
   border: 2px solid black;
   height: 120px;
   width: 120px;
 }
-#profile_name{
+.profile_name{
   position: absolute;
-  top: 250px;
   left: 1%;
+  padding: 3px;
+  margin: 3px;
 }
+#right_side_p{
+  position: absolute;
+  width: 23%;
+  height: 590px;
+  top: 140px;
+  right: 1%;
+  /*floast: right;*/
+
+}
+
+
 .register_container{
   position: relative;
   top: 120px;
@@ -200,8 +243,8 @@ img.profile_image{
 /*--------------------------------------------------*/
 
 .new_wish{
-  position: absolute;
-  top: 122px;
+  /*position: absolute;*/
+  /*top: 122px;*/
   right: 2%;
   padding: 20px;
   background: rgb(15, 63, 151); /* Fallback */
