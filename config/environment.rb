@@ -20,15 +20,15 @@ require "json"
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'erb'
+require 'dotenv'
+Dotenv.load
 
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'bcrypt'
 require 'haml'
 
-require 'erb'
-require 'dotenv'
-Dotenv.load
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
