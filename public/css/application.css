@@ -1,5 +1,16 @@
 body{
-  background-color: silver;
+  /*background-color: silver;*/
+  background-image: url("/imgs/wishing_ring.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-height: 1200px;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-color: lightblue;
+    background-image: none;
+  }
 }
 /*
 * {
