@@ -44,13 +44,7 @@ end
 # ----------------------------------------------------- #
 
 before do
-  @system_url = "https://fathomless-cove-4366.herokuapp.com/"
-
-
-
-  # @system_url = "http://localhost:9292/"
-  # @client_id = "343095229210233"
-  # @client_secret = "edb09cb95e4b734e93e3f0cf0508d0ac"
+  @system_url = "https://pure-forest-1244.herokuapp.com/"
 
 
   session[:oauth] ||= {}
