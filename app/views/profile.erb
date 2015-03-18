@@ -7,11 +7,7 @@
 
 <div id="left_side_p">
   <div class="profile_picture">
-    <style type="text/css">
-        .profile_picture{
-          background-color: <%= session_current_user.profile_picture %>;
-        }
-     </style>   
+      
   </div>
   <div class="profile_name"> 
     <%= session_current_user.name.titleize %>
@@ -20,11 +16,6 @@
     <br>
     <%= session_current_user.age %>
     
-    <!-- <form action="/user/<%=session_current_user.id%>/edit" id="ajax_edit" method="put">
-        <button class="delete_button" data-user-id="<%= session_current_user.id %>">Edit Profile</button>
-
-        <input type="text">
-       </form> -->
   </div>
   <!-- for ajax calls -->
   <!-- not visible -->

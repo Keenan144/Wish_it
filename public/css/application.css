@@ -1,14 +1,15 @@
 body{
   /*background-color: silver;*/
-  background-image: url("/imgs/wishing_ring.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-height: 1200px;
+  background: url("/imgs/wishing_ring.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
   body {
-    background-color: lightblue;
+    background-color: lightgreen;
     background-image: none;
   }
 }
@@ -131,6 +132,7 @@ img.profile_image{
 
 .bottom_nav_center{
   /*vertical-align: bottom;*/
+  position: absolute;
   bottom: 5%;
   width: 240px;
   margin-right: auto;
@@ -347,6 +349,27 @@ img.profile_image{
 
 
 
+#hvr-buzz {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+#hvr-buzz:hover, #hvr-buzz:focus, #hvr-buzz:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 
 
 
