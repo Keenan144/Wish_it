@@ -28,44 +28,13 @@
 <body>
 
 
-<!-- Like Button -->
-<!-- <div id="facebook_buttons">
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '947543755270283',
-        xfbml      : true,
-        version    : 'v2.2'
-      });
-    };
-
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-
-  <div
-    class="fb-like"
-    data-share="true"
-    data-width="200"
-    data-show-faces="true">
-  </div>
-</div> -->
-
 <div class="logged_in_indicator">
   <% if session_current_user %>
   <p id="indicator"> logged in </p>
-    <a class="logout_button" href="/logout">Logout</a><br><br>
-      <% else %>
-      <p id="indicator_off"> logged out </p>
-      <% end %>
-    </div>
+    <a class="logout_button" href="/logout">Logout</a>
+  <% end %>
 </div>
+
 
   <%= yield %>
 
