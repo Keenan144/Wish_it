@@ -1,20 +1,33 @@
-<div class="homepage_main" align="center">
-  <div id="text_for_homepage">
-    <h1>Welcome to Wish It</h1>
-    <h4> Helping to make your 
-    <br><br> wishes come true...</h4>
+
+
+
+<div class="tile tile-login">
+  <div id="login-text">
+     <div id="login-text-1">Welcome to Wish It<br>
+     helping to make anyones <br>
+     wishes come true...</div><br><br>
   </div>
+   <form class="login-form" action='/login' method="post">
+    <div class="input-icon">
+      <span class="ss-user"></span>
+      <input type="text" class="form-control" name="email" placeholder="wish@herokuwebapps.com">
+    </div>
 
-  <form class="main_login_form" action='/login' method="post">
-      Email: <input type="text" name="email" placeholder="wish@herokuwebapps.com" size="28px"><br><br>
-      Password: <input type="password" name="password" placeholder="password"><br><br>
-      <input type="submit" value="Log in">
+    <div class="input-icon">
+      <span class="ss-lock"></span>
+        <input type="password" class="form-control" name="password" placeholder="password">
+    </div>
+    <input class="btn btn-block btn-primary btn-embossed" type="submit" value="Log in">
   </form>
-  
-  <br><a href="/register" id="signup"> 
-  <button>Sign Up</button></a>
-<!-- 
-  <p><a href="/request" id="login_with_fb"><button id="login_with_fb_button"> Login with facebook </button></a></p>  -->   
-  <!-- # erb :"partials/_create_a_facebook_user_or_login_with_an_existing"  -->
 
+  <div class="login-action clearfix">
+    <div class="col-md-8">
+      <label class="checkbox">
+        <input type="checkbox" value="" data-toggle="checkbox" />Remember Me
+      </label>
+    </div>
+    <div class="col-md-4">
+      <a href="#">Forget?</a>
+    </div>
+  </div>
 </div>

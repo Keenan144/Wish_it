@@ -7,8 +7,8 @@ post '/login' do
   @user = User.find_by(email: params[:email])
  if @user && @user.authenticate(params[:password])
       session_set_current_user(@user)
-      #redirect to their profile page
-      redirect('/profile')
+
+      redirect('/')
   else
 
     @error = "invalid login"
@@ -43,23 +43,25 @@ post '/register' do
 end
 # ----------------------------------------------------- #
 
-before do
-  @system_url = "https://pure-forest-1244.herokuapp.com/"
-
-
-  session[:oauth] ||= {}
-end
-
 # --------------------------Restful Routes--------------------------- #
 get '/' do
+  p "loading '/'"
   # goes to view /index.erb
 
-    http = Net::HTTP.new "graph.facebook.com", 443
-    request = Net::HTTP::Get.new "/me?access_token=#{session[:oauth][:access_token]}"
-    http.use_ssl = true
-    response = http.request request
-    @json = JSON.parse(response.body)
-  erb :homepage
+  if session_current_user == nil
+    p "session is nil"
+    erb :"partials/_loginpage"
+  else
+    erb :homepage
+  end
+end
+
+get '/friends' do 
+  erb :"partials/_display_friends_list"
+end
+
+get '/searchFriends' do 
+  erb :"partials/_search_friends"
 end
 
 
@@ -164,36 +166,22 @@ delete '/user/:user_id/wish/:wish_id/delete' do
   @wish.destroy
 end
 
-# ----------------------------------------------------- #
-
-# ------------------------Facebook Oauth Calls ----------------------------- #
-
-
 
 get "/request" do
-  redirect "https://graph.facebook.com/oauth/authorize?client_id=#{ENV["CLIENT_ID"]}&redirect_uri=#{@system_url}callback"
+
 end
 
 get "/callback" do
-  session[:oauth][:code] = params[:code]
 
-  http = Net::HTTP.new "graph.facebook.com", 443
-  request = Net::HTTP::Get.new "/oauth/access_token?client_id=#{ENV["CLIENT_ID"]}&redirect_uri=#{@system_url}callback&client_secret=#{ENV["CLIENT_SECRET"]}&code=#{session[:oauth][:code]}"
-  http.use_ssl = true
-  response = http.request request
-
-  session[:oauth][:access_token] = CGI.parse(response.body)["access_token"][0]
   redirect "/"
 end
 
 
 get "/logout" do
-  session[:oauth] = {}
   session[:current_user_id] = nil
   redirect "/"
 end
 
-enable :inline_templates
 
 
 
